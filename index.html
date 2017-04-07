@@ -74,11 +74,16 @@
    }).addTo(map);
    controlLayers.addOverlay(customLayer, 'Markers from data.csv');
     
-   var runlayer1 = omnivore.geojson('Kerala_RoadAccidents_2016.json', null, customLayer)
+   var customLayera = L.geoJson(null, {
+   onEachFeature: function(feature, layer) {
+     layer.bindPopup(feature.properties.Title);
+    
+    
+    var runLayer1 = omnivore.geojson('Kerala_RoadAccidents_2016.json', null, customLayera)
    .on('ready', function() {
-     map.fitbounds(runLayer.getBounds());
+     map.fitbounds(runLayer1.getBounds());
    }).addTo(map);
-    controlLayer.addOverlay(customLayer, 'Road accidents');
+    controlLayer.addOverlay(customLayera, 'Road accidents');
     
    //L.choropleth(geojsonData, {
      //valueProperty: Number_of_Accidents
