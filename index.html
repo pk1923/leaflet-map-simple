@@ -78,6 +78,7 @@
    .on('ready', function() {
      map.fitbounds(runLayer.getBounds());
    }).addTo(map);
+    controlLayer.addOverlay(customLayer, 'Road accidents');
     
    //L.choropleth(geojsonData, {
      //valueProperty: Number_of_Accidents
