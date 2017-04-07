@@ -73,6 +73,14 @@
     map.fitBounds(runLayer.getBounds());
    }).addTo(map);
    controlLayers.addOverlay(customLayer, 'Markers from data.csv');
+    
+   var runlayer1 = omnivore.geojson('Kerala_RoadAccidents_2016.json', null, customLayer)
+   .on('ready', function() {
+     map.fitbounds(runLayer.getBounds());
+   }).addTo(map);
+    
+   //L.choropleth(geojsonData, {
+     //valueProperty: Number_of_Accidents
 
   </script>
 </body>
