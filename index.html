@@ -68,7 +68,7 @@
      layer.bindPopup(feature.properties.Title);
   }
    });
-   var runLayer = omnivore.json('Kerala_Districts.json', null, customLayer)
+   var runLayer = omnivore.geoJson('Kerala_Districts.json', null, customLayer)
    .on('ready', function() {
     map.fitBounds(runLayer.getBounds());
    }).addTo(map);
